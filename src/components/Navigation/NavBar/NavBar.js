@@ -1,4 +1,4 @@
-import logo from '../logomandala.jpg';
+import logo from '../../../logomandala.jpg';
 
 const NavBar = () => {
     return (
@@ -17,10 +17,7 @@ const NavBar = () => {
                 <li>
                     <a href="#">Favoritos</a>
                 </li>
-            </ul>
-            <div className="button-container">
-                <button>Carrito</button>
-            </div>    
+            </ul>   
         </div>
     )
 }
