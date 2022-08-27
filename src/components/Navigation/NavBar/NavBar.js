@@ -1,4 +1,5 @@
 import logo from '../../../logomandala.jpg';
+import CartWidget from '../CartWidget/CartWidget';
 
 const NavBar = () => {
     return (
@@ -17,7 +18,8 @@ const NavBar = () => {
                 <li>
                     <a href="#">Favoritos</a>
                 </li>
-            </ul>   
+            </ul>
+            <CartWidget/>
         </div>
     )
 }
