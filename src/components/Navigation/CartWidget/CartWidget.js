@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 const CartWidget = () => {
     return (
         <div >
-            <Button ><Cart3 size={50} /></Button>
+            <Button className="btn btn-secondary border p-3 me-4"><Cart3 size={50} /></Button>
         </div>
     )
 }
