@@ -8,7 +8,7 @@ function ItemCount (props) {
 
     const suma = () => initialState < props.stock ? setInitialState(initialState + 1) : alert('Se alcanzó el stock máximo');
 
-    const resta = () => initialState >= 2 && setInitialState(initialState - 1);
+    const resta = () => initialState > 1 && setInitialState(initialState - 1);
 
     return (
         <div className="card border-secondary m-3">
