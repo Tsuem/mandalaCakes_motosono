@@ -11,14 +11,14 @@ const ItemListContainer = ({welcome}) => {
         getFetch
         .then((resp)=>setData(resp))
         .catch(err=>console.log(err))
-            .finally(()=>setLoading(false))
+        .finally(()=>setLoading(false))
     },[])
 
     return (
         <>
             <h1 className="m-3">{welcome}</h1>
             {
-                loading ? <h2>Cargando...</h2> :
+                loading ? <h2>Loading...</h2> :
                 <ItemList products={data}/>
             }
         </> 

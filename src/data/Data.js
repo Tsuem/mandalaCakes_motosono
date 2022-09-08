@@ -1,44 +1,44 @@
 const Data =[{
     id: 1,
-    nombre: "Cheese Cake con Frutos Rojos",
-    precio: 3600,
+    name: "Berry Cheesecake",
+    price: 3600,
     stock: 5,
-    imagen: "img/CheeseCake.png"
+    img: "img/CheeseCake.png"
 },
 {
     id: 2,
-    nombre: "ChocoOreo",
-    precio: 7000,
+    name: "Choco Oreo Cake",
+    price: 4500,
     stock: 6,
-    imagen: "img/ChocoOreo.png"
+    img: "img/ChocoOreo.png"
 },
 {
     id: 3,
-    nombre: "ChocoTorta",
-    precio: 6900,
+    name: "Chocolate Cake",
+    price: 4300,
     stock: 8,
-    imagen: "img/Chocotorta.png"
+    img: "img/Chocotorta.png"
 },
 {
     id: 4,
-    nombre: "Cocada",
-    precio: 6900,
+    name: "Coconut Cake",
+    price: 3600,
     stock: 10,
-    imagen: "img/Cocada.png"
+    img: "img/Cocada.png"
 },
 {
     id: 5,
-    nombre: "Frutillas",
-    precio: 6900,
+    name: "Strawberry Cake",
+    price: 3400,
     stock: 9,
-    imagen: "img/Frutillas.png"
+    img: "img/Frutillas.png"
 },
 {
     id: 6,
-    nombre: "Marquise Clásica",
-    precio: 6900,
+    name: "Classic Marquise",
+    price: 3100,
     stock: 7,
-    imagen: "img/MarquiseClasica.png"
+    img: "img/MarquiseClasica.png"
 }
 ]
 
@@ -50,7 +50,7 @@ const getFetch = new Promise((res,rej) => {
         }, 2000);
     }
     else {
-        rej(console.log("No hay datos"))
+        rej(console.log("There's no data"))
     }
 })
 
