@@ -17,10 +17,12 @@ const ItemListContainer = ({welcome}) => {
     return (
         <>
             <h1 className="m-3">{welcome}</h1>
-            {
-                loading ? <h2>Loading...</h2> :
-                <ItemList products={data}/>
-            }
+            <div className="container p-4">
+                {
+                    loading ? <h2>Loading...</h2> :
+                    <ItemList products={data}/>
+                }
+            </div>
         </> 
     )
 }
