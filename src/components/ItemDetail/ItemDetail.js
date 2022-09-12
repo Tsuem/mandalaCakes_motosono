@@ -1,19 +1,28 @@
-function ItemDetail ({item}) {
+import ItemCount from "../ItemCount/ItemCount"
+import './styles.css'
+
+function ItemDetail({ item }) {
     return (
         <>
-            <div className="col-md-12 col-lg-6 col-xl-4">
-                <div className="card border-secondary m-3">
-                    <h3 className="card-header">{item.name}</h3>
-                    <div className="card-body justify-content-center">
-                        <img className="card-mandala p-4" src={item.img} alt="mandala-cakes"/>
-                        <p className="card-text">Description: {item.description}</p>
-                        <h6 className="m-1">Stock: {item.stock}</h6>
-                        <h5 className="m-1">Price: ${item.price}</h5>
-                        {/* <ItemCount stock={item.stock}/> */}
-                        <div className="d-grid gap-2">
-                            <button className="btn btn-lg btn-secondary m-1" type="button">Add to Cart</button>
+            <div className ="col-lg-12">
+                <div className="card card-mandala border-secondary m-3">
+                    <div className="row g-0">
+                        <div className="col-md-6">
+                            <img src={item.img} className="img-fluid rounded-start" alt="mandala-cakes" />
                         </div>
-                    </div>
+                        <div className="col-md-6">
+                            <div className="card-body">
+                                <h4 className="card-title">{item.name}</h4>
+                                <p className="card-text">{item.description}</p>
+                                <p className="card-text">Stock: {item.stock}</p>
+                                <p className="card-text">Price: ${item.price}</p>
+                                <div className="d-grid gap-2">
+                                    <ItemCount stock={item.stock}/>
+                                    <button className="btn btn-lg btn-secondary m-1" type="button">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
                 </div>
             </div>
         </>
@@ -21,3 +30,6 @@ function ItemDetail ({item}) {
 }
 
 export default ItemDetail
+
+
+    
