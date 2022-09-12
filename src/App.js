@@ -2,6 +2,7 @@ import './App.css';
 import NavBar from './components/Navigation/NavBar/NavBar';
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer'
 import 'bootswatch/dist/minty/bootstrap.min.css';
+import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
@@ -9,7 +10,8 @@ function App() {
     <nav className="App">
       <NavBar/>
       <div>
-        <ItemListContainer welcome={"Welcome to Mandala Cakes!"} />
+        {/* <ItemListContainer welcome={"Welcome to Mandala Cakes!"} /> */}
+        <ItemDetailContainer />
       </div>
     </nav> 
   );

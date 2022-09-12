@@ -1,30 +1,28 @@
-import React from 'react'
+import { getItem } from "../../data/Data";
 import { useState,useEffect } from 'react'
-import {getFetch} from '../../data/Data'
-import ItemList from "../../components/ItemList/ItemList";
+import ItemDetail from "../../components/ItemDetail/ItemDetail";
 
-const ItemListContainer = ({greeting}) => {
-    const[data,setData]=useState([])
+const ItemDetailContainer = () => {
+    const[item,setItem]=useState([])
     const[loading,setLoading]=useState(true)
 
     useEffect(()=>{
-        getFetch
-        .then((resp)=>setData(resp))
+        getItem
+        .then((resp)=>setItem(resp))
         .catch(err=>console.log(err))
         .finally(()=>setLoading(false))
     },[])
 
     return (
         <>
-            <h1 className="m-3">{greeting}</h1>
             <div className="container p-4">
                 {
                     loading ? <h2>Loading...</h2> :
-                    <ItemList products={data}/>
+                    <ItemDetail item={item}/>
                 }
             </div>
         </> 
     )
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer
