@@ -16,8 +16,8 @@ const ItemListContainer = ({greeting}) => {
 
     return (
         <>
-            <h1 className="m-3">{greeting}</h1>
-            <div className="container p-4">
+            <h1 className="mt-4">{greeting}</h1>
+            <div className="container p-3">
                 {
                     loading ? <h2>Loading...</h2> :
                     <ItemList products={data}/>

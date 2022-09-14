@@ -1,17 +1,28 @@
-import { getItem } from "../../data/Data";
-import { useState,useEffect } from 'react'
+import { getFetch } from "../../data/Data";
+import { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom';
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
     const[item,setItem]=useState([])
     const[loading,setLoading]=useState(true)
 
+    const {id} = useParams()
+    const navigate = useNavigate()
+
     useEffect(()=>{
-        getItem
-        .then((resp)=>setItem(resp))
+        getFetch
+        .then((resp)=> {
+            const product = resp.find(product => product.id === parseInt(id))
+            if (product) {
+                setItem(product)
+                setLoading(false)
+            } else {
+                navigate("/error")
+            }
+        })
         .catch(err=>console.log(err))
-        .finally(()=>setLoading(false))
-    },[])
+    },[id])
 
     return (
         <>
