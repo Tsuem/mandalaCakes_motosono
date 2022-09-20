@@ -18,6 +18,7 @@ function App() {
           <Route path="/about" element={<h1 className="mt-4"> About us</h1>} />
           <Route path="/contact" element={<h1 className="mt-4">Contact us</h1>} />
           <Route path="*" element={<h1 className="mt-4"> 404 - Not found... </h1>} />
+          <Route path="/cart" element={<h1 className="mt-4">Cart</h1>} />         
         </Routes>
         {/* Footer */}
       </BrowserRouter>
