@@ -1,9 +1,10 @@
 import './App.css';
+import 'bootswatch/dist/minty/bootstrap.min.css';
 import NavBar from './components/Navigation/NavBar/NavBar';
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer'
-import 'bootswatch/dist/minty/bootstrap.min.css';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { CustomProvider } from './context/CartContext';
 
 function App() {
 

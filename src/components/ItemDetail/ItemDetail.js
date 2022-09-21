@@ -3,12 +3,16 @@ import { useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
 import { Link } from "react-router-dom";
 
-const notify = () => toast.success('Added to your Cart.');
 
 function ItemDetail({ item }) {
-
     const [initialState, setInitialState] = useState(1);
+    const [initialButton, setInitialButton] = useState(false);
 
+    const notify = () => {
+        toast.success('Added to your Cart.');
+        setInitialButton(true)
+    }
+    
     const handleClick = () => {
         console.log(initialState);
     }
@@ -28,12 +32,9 @@ function ItemDetail({ item }) {
                                 <p className="card-text">Stock: {item.stock}</p>
                                 <p className="card-text">Price: ${item.price}</p>
                                 <div className="d-grid gap-2">
-                                    <ItemCount stock={item.stock} initialState={initialState} setInitialState={setInitialState}/>
-                                    <button onClick={notify} className="btn btn-lg btn-secondary m-1" type="button">Add to Cart</button>
+                                    <ItemCount stock={item.stock} initialState={initialState} setInitialState={setInitialState} />
+                                    { (initialButton === false) ? ( <button onClick={notify} className="btn btn-lg btn-secondary m-1" type="button">Add to Cart</button> )  :  (<Link to={'/cart'}> <button onClick={handleClick} className="btn btn-lg btn-secondary m-1" type="button">Go to Cart</button> </Link> ) }
                                     <Toaster position="top-right" reverseOrder={false} />
-                                    <Link to={'/cart'}>
-                                        <button onClick={handleClick} className="btn btn-lg btn-secondary m-1" type="button">Go to Cart</button>
-                                    </Link>
                                 </div>
                             </div>
                         </div>
