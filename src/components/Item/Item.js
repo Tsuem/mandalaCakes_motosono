@@ -7,10 +7,14 @@ import toast, { Toaster } from 'react-hot-toast';
 function Item({ data }) {
     const [initialState, setInitialState] = useState(1);
     const [initialButton, setInitialButton] = useState(false);
+    const [initialCount, setInitialCount] = useState(true);
+
 
     const notify = () => {
         toast.success('Added to your Cart.');
         setInitialButton(true)
+        setInitialCount(false)
+
     }
 
     const handleClick = () => {
@@ -27,8 +31,7 @@ function Item({ data }) {
                     </Link>
                     <h5 >Price: ${data.price}</h5>
                     <h6>Stock: {data.stock}</h6>
-                    <ItemCount stock={data.stock} initialState={initialState} setInitialState={setInitialState} />
-                    <div className="d-grid gap-2">
+                    {initialCount && <ItemCount stock={data.stock} initialState={initialState} setInitialState={setInitialState} />}                    <div className="d-grid gap-2">
                         {(initialButton === false) ? (<button onClick={notify} className="btn btn-lg btn-secondary m-1" type="button">Add to Cart</button>) : (<Link to={'/cart'}> <button onClick={handleClick} className="btn btn-lg btn-secondary m-1" type="button">Go to Cart</button> </Link>)}
                         <Toaster position="top-right" reverseOrder={false} />
                     </div>
