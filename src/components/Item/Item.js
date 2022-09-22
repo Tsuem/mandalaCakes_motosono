@@ -1,25 +1,21 @@
-import ItemCount from '../ItemCount/ItemCount';
-import { useState } from "react";
-import './styles.css'
+import '../Item/styles.css'
 import { Link } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
+/* import ItemCount from '../ItemCount/ItemCount';
+import { useState } from "react";
+import toast, { Toaster } from 'react-hot-toast'; */
 
 function Item({ data }) {
-    const [initialState, setInitialState] = useState(1);
+/*     const [initialState, setInitialState] = useState(1);
     const [initialButton, setInitialButton] = useState(false);
     const [initialCount, setInitialCount] = useState(true);
 
 
-    const notify = () => {
+    const onAdd = () => {
         toast.success('Added to your Cart.');
         setInitialButton(true)
         setInitialCount(false)
 
-    }
-
-    const handleClick = () => {
-        console.log(initialState);
-    }
+    }*/
 
     return (
         <div className="col-md-12 col-lg-6 col-xl-4">
@@ -29,12 +25,8 @@ function Item({ data }) {
                     <Link key={data.id} to={`/item/${data.id}`}>
                         <img className="card-mandala p-4" src={data.img} alt="mandala-cakes" />
                     </Link>
-                    <h5 >Price: ${data.price}</h5>
-                    <h6>Stock: {data.stock}</h6>
-                    {initialCount && <ItemCount stock={data.stock} initialState={initialState} setInitialState={setInitialState} />}                    <div className="d-grid gap-2">
-                        {(initialButton === false) ? (<button onClick={notify} className="btn btn-lg btn-secondary m-1" type="button">Add to Cart</button>) : (<Link to={'/cart'}> <button onClick={handleClick} className="btn btn-lg btn-secondary m-1" type="button">Go to Cart</button> </Link>)}
-                        <Toaster position="top-right" reverseOrder={false} />
-                    </div>
+                    <hr/>
+                    <h4>Price: ${data.price}</h4>                    
                 </div>
             </div>
         </div>
