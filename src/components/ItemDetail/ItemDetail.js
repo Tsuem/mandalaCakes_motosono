@@ -3,13 +3,15 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Toaster } from 'react-hot-toast';
 import { CartContext } from "../../context/CartContext";
+import { ArrowLeft } from 'react-bootstrap-icons';
 
 
 function ItemDetail({ item }) {
-    const {addToCart} = useContext(CartContext);
+    const { addToCart } = useContext(CartContext);
     const [count, setCount] = useState(1);
     const [initialButton, setInitialButton] = useState(false);
     const [initialItemCount, setInitialItemCount] = useState(true);
+
 
     const onAdd = (item, count) => {
         setInitialButton(true)
@@ -21,6 +23,9 @@ function ItemDetail({ item }) {
 
     return (
         <>
+            <Link to={'/'} className="d-flex justify-content-start m-3 text-decoration-none">
+                <h4 className="text-secondary"><ArrowLeft className="me-2" />Continue Shopping</h4>
+            </Link>
             <div className="d-flex justify-content-center m-4">
                 <div className="card border-secondary m-3 w-auto" style={{ maxWidth: '600px' }}>
                     <div className="row g-0">

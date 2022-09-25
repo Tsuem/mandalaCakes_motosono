@@ -1,24 +1,10 @@
 import '../Item/styles.css'
 import { Link } from 'react-router-dom';
-/* import ItemCount from '../ItemCount/ItemCount';
-import { useState } from "react";
-import toast, { Toaster } from 'react-hot-toast'; */
 
 function Item({ data }) {
-/*     const [initialState, setInitialState] = useState(1);
-    const [initialButton, setInitialButton] = useState(false);
-    const [initialCount, setInitialCount] = useState(true);
-
-
-    const onAdd = () => {
-        toast.success('Added to your Cart.');
-        setInitialButton(true)
-        setInitialCount(false)
-
-    }*/
 
     return (
-        <div className="col-md-12 col-lg-6 col-xl-4">
+        <div className="col-md-12 col-xl-6 col-xxl-4">
             <div className="card border-secondary m-3">
                 <h3 className="card-header">{data.name}</h3>
                 <div className="card-body justify-content-center">
