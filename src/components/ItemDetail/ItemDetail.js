@@ -12,7 +12,6 @@ function ItemDetail({ item }) {
     const [initialButton, setInitialButton] = useState(false);
     const [initialItemCount, setInitialItemCount] = useState(true);
 
-
     const onAdd = (item, count) => {
         setInitialButton(true)
         setInitialItemCount(false)
@@ -54,7 +53,4 @@ function ItemDetail({ item }) {
     )
 }
 
-export default ItemDetail
-
-
-
+export default ItemDetail;

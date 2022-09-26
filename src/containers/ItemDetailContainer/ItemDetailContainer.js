@@ -1,38 +1,37 @@
-import { getFetch } from "../../data/Data";
+/* import { getFetch } from "../../data/Data"; */
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import { doc, getDoc } from 'firebase/firestore';
+import db from '../../firebase'
 
 const ItemDetailContainer = () => {
-    const[item,setItem]=useState([])
-    const[loading,setLoading]=useState(true)
+    const [item, setItem] = useState([])
+    const [loading, setLoading] = useState(true)
+    const { id } = useParams()
 
-    const {id} = useParams()
-    const navigate = useNavigate()
+    const getProduct = () => {
+        const queryDoc = doc(db, 'items', id)
 
-    useEffect(()=>{
-        getFetch
-        .then((resp)=> {
-            const product = resp.find(product => product.id === parseInt(id))
-            if (product) {
-                setItem(product)
+        getDoc(queryDoc)
+            .then((res) => {
+                setItem({ id: res.id, ...res.data() })
                 setLoading(false)
-            } else {
-                navigate("/error")
-            }
-        })
-        .catch(err=>console.log(err))
-    },[id])
+            })
+            .catch(err => console.log(err))
+    }
+
+    useEffect(() => {
+        getProduct();
+    }, [id]);
 
     return (
-        <>
-            <div className="container p-4">
-                {
-                    loading ? <h2>Loading...</h2> :
-                    <ItemDetail item={item}/>
-                }
-            </div>
-        </> 
+        <div className="container p-4">
+            {
+                loading ? <h2>Loading...</h2> :
+                    <ItemDetail item={item} />
+            }
+        </div>
     )
 }
 
