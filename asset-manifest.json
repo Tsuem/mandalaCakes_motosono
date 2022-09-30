@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mandalaCakes_motosono/static/css/main.7707317a.css",
+    "main.js": "/mandalaCakes_motosono/static/js/main.404dd9c2.js",
+    "static/js/787.219765dd.chunk.js": "/mandalaCakes_motosono/static/js/787.219765dd.chunk.js",
+    "index.html": "/mandalaCakes_motosono/index.html",
+    "main.7707317a.css.map": "/mandalaCakes_motosono/static/css/main.7707317a.css.map",
+    "main.404dd9c2.js.map": "/mandalaCakes_motosono/static/js/main.404dd9c2.js.map",
+    "787.219765dd.chunk.js.map": "/mandalaCakes_motosono/static/js/787.219765dd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7707317a.css",
+    "static/js/main.404dd9c2.js"
+  ]
+}
