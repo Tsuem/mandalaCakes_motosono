@@ -18,8 +18,6 @@ function ItemDetail({ item }) {
         addToCart(item, count)
     }
 
-    console.log(count);
-
     return (
         <>
             <Link to={'/'} className="d-flex justify-content-start m-3 text-decoration-none">

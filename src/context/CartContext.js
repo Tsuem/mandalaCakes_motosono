@@ -31,11 +31,6 @@ export const CustomProvider = ({ children }) => {
 
     };
 
-    /* const clear = () => {
-        setCart([])
-    } */
-
-
     const calculateTotalPrice = (price, quantity) => {
         setTotal(price * quantity + total)
     }
@@ -53,8 +48,14 @@ export const CustomProvider = ({ children }) => {
         setCart(newArray);
     }
 
+    const clearCart = () => {
+        setCart([]);
+        setTotal(0);
+        setQty(0);
+    }
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeItem, total, qty }}>
+        <CartContext.Provider value={{ cart, addToCart, removeItem, total, qty, clearCart }}>
             {children}
         </CartContext.Provider>
     );
