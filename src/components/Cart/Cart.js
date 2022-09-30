@@ -2,10 +2,57 @@ import { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { ArrowLeft, Trash } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
-
+import { collection, addDoc, getFirestore, updateDoc } from 'firebase/firestore';
+import db from '../../firebase';
 
 const Cart = () => {
     const { cart, removeItem, total } = useContext(CartContext);
+
+    const createOrder = () => {
+        const order = {
+            buyer: {
+                name: 'Maxi',
+                phone: '35268769',
+                email: 'maxi123@gmail.com'
+            },
+            items: cart,
+            total: cart.reduce((acc, items) => (items.quantity * items.price) + acc, 0),
+            date: new Date(),
+        }
+        const query = collection(db, 'orders');
+        addDoc(query, order)
+            .then(({id}) => {
+                console.log(id);
+                alert('Congratz');
+            }) 
+            .catch(() => 
+                alert('Opps...')
+            );
+    };
+
+    const updateOrder = () => {
+        const idOrder = 'uRGaGRTDbgD9DnXSySXx';
+        const order = {
+            buyer: {
+                name: 'Maxi',
+                phone: '35268769',
+                email: 'maxi123@gmail.com'
+            },
+            items: cart.pop(),
+            total: cart.pop().reduce((acc, items) => (items.quantity * items.price) + acc, 0),
+            date: new Date(),
+        }
+        const queryUpdate = doc(db, 'orders', idOrder);
+        updateDoc(queryUpdate, order)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+}
+
 
     return (
         <div>
@@ -27,12 +74,14 @@ const Cart = () => {
                         </div>
                     ))}
 
-                    <hr className='mx-5'/>
+                    <hr className='mx-5' />
                     <h5>Total = ${total}</h5>
 
                 </>
             )}
-
+            <div>
+                <button onClick={createOrder}>Go to Pay</button>
+            </div>
         </div >);
 };
 
