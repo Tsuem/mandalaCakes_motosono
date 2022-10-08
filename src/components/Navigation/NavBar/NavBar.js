@@ -11,10 +11,10 @@ const NavBar = () => {
         <Link to={'/'} className="navbar-brand">
           <img src={logo} className="d-inline-block align-text-top ms-4 me-1" width="85px" alt="mandala-logo" />
         </Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <button className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />
         </button>
-        <div className="collapse navbar-collapse" id="navbarColor02">
+        <div className="navbar-collapse collapse" id="navbarColor02">
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
               <NavLink to={'/'} style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} className="nav-link">Home</NavLink>

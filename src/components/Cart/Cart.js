@@ -26,8 +26,24 @@ const Cart = () => {
         setInfo({ ...info, [id]: value })
     }
 
-    const createOrder = (e) => {
-        e.preventDefault();
+    const handleSubmit = (e) => {
+        console.log("holis");
+        e.preventDefault()
+        if (info.name.trim() === "" || info.phone.length !== 10 || info.email.trim() === "") {
+            return MySwal.fire({
+                title: <p>Verify again!</p>,
+                html: <i>Some field is wrong.</i>,
+                icon: 'error'
+            }).then(() => {
+                return
+            })
+
+        }
+        createOrder()
+        console.log("hola");
+    }
+
+    const createOrder = () => {
 
         const order = {
             buyer: {
@@ -45,7 +61,7 @@ const Cart = () => {
                 handleClose();
                 MySwal.fire({
                     title: <p>Purchase Successful!</p>,
-                    html: <i>Your order ID is { id }</i>,
+                    html: <i>Your order ID is {id}</i>,
                     icon: 'success'
                 }).then(() => {
                     clearCart();
@@ -123,6 +139,7 @@ const Cart = () => {
                                             type="text"
                                             placeholder="Name"
                                             autoFocus
+                                            required
                                         />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="email">
@@ -132,15 +149,17 @@ const Cart = () => {
                                             value={info.email}
                                             type="email"
                                             placeholder="name@example.com"
+                                            required
                                         />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="phone">
                                         <Form.Label>Phone number</Form.Label>
                                         <Form.Control
                                             onChange={handleChange}
-                                            value={info.phone} 
+                                            value={info.phone}
                                             type="number"
-                                            placeholder="112233445566"
+                                            placeholder="11223344556"
+                                            required
                                         />
                                     </Form.Group>
                                 </Form>
@@ -149,8 +168,8 @@ const Cart = () => {
                                 <Button variant="secondary" onClick={handleClose}>
                                     Close
                                 </Button>
-                                <Button variant="primary" onClick={createOrder}>
-                                    Send
+                                <Button variant="primary" onClick={handleSubmit}>
+                                    Submit
                                 </Button>
                             </Modal.Footer>
                         </Modal>
