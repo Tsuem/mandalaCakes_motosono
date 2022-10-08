@@ -25,7 +25,7 @@ const NavBar = () => {
               <NavDropdown.Item as={Link} to={'category/Vegan'}>Vegan</NavDropdown.Item>
             </NavDropdown>
             <li className="nav-item">
-              <NavLink to={'/about'} style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} className="nav-link">About</NavLink>
+              <NavLink to={'/about'} style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} className="nav-link">About Us</NavLink>
             </li>
             <li className="nav-item">
               <NavLink to={'/contact'} style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} className="nav-link">Contact</NavLink>

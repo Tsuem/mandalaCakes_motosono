@@ -6,6 +6,8 @@ import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CustomProvider } from './context/CartContext';
 import Cart from './components/Cart/Cart';
+import AboutUs from './components/AboutUs/AboutUs';
+import Footer from './components/Footer/Footer';
 
 function App() {
 
@@ -18,12 +20,12 @@ function App() {
             <Route path="/" element={<ItemListContainer greeting={"Welcome to Mandala Cakes"} />} />
             <Route path="category/:id" element={<ItemListContainer />} />
             <Route path="item/:id" element={<ItemDetailContainer />} />
-            <Route path="/about" element={<h1 className="mt-4"> About us</h1>} />
+            <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<h1 className="mt-4">Contact us</h1>} />
             <Route path="*" element={<h1 className="mt-4"> 404 - Not found... </h1>} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
-          {/* Footer */}
+          <Footer />
         </BrowserRouter>
       </CustomProvider>
 

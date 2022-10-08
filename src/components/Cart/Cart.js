@@ -73,29 +73,6 @@ const Cart = () => {
             );
     };
 
-    const updateOrder = () => {
-        const idOrder = 'tS34nFwwQGsQ7VdHnSfz';
-        const order = {
-            buyer: {
-                name: 'Maxi',
-                phone: '35268769',
-                email: 'maxi123@gmail.com'
-            },
-            items: cart.pop(),
-            total: cart.reduce((acc, items) => (items.quantity * items.price) + acc, 0),
-            date: moment().format(),
-        }
-        const queryUpdate = doc(db, 'orders', idOrder);
-        updateDoc(queryUpdate, order)
-            .then((response) => {
-                console.log(response);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    };
-
-
     return (
         <div>
             <h1 className='my-4'>Shopping Cart</h1>
@@ -117,11 +94,9 @@ const Cart = () => {
                     ))}
 
                     <hr className='mx-5' />
-                    <h5>Total = ${total}</h5>
+                    <h5 className='mt-2'>Total = ${total}</h5>
                     <div className="d-grid gap-2 d-md-flex justify-content-center">
-                        <button type="button" className="btn btn-secondary" onClick={updateOrder}>Edit your Order</button>
-                        {/* <button type="button" className="btn btn-secondary" onClick={createOrder}>Go to Pay</button> */}
-                        <Button variant="primary" onClick={handleShow}>
+                        <Button className ='mt-2' variant="secondary" onClick={handleShow}>
                             Go to Pay
                         </Button>
 
