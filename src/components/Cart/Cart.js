@@ -2,7 +2,7 @@ import { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { ArrowLeft, Trash } from 'react-bootstrap-icons';
 import { Link, useNavigate } from 'react-router-dom';
-import { collection, addDoc, doc, updateDoc } from 'firebase/firestore';
+import { collection, addDoc } from 'firebase/firestore';
 import db from '../../firebase';
 import moment from 'moment'
 import Button from 'react-bootstrap/Button';
@@ -27,7 +27,6 @@ const Cart = () => {
     }
 
     const handleSubmit = (e) => {
-        console.log("holis");
         e.preventDefault()
         if (info.name.trim() === "" || info.phone.length !== 10 || info.email.trim() === "") {
             return MySwal.fire({
@@ -37,10 +36,8 @@ const Cart = () => {
             }).then(() => {
                 return
             })
-
         }
         createOrder()
-        console.log("hola");
     }
 
     const createOrder = () => {

@@ -4,7 +4,7 @@ const AboutUs = () => {
   return (
     <>
         <h1 className="mt-4">About Us</h1>
-        <img className="img-fluid" src="https://jpuvh4uhp6-flywheel.netdna-ssl.com/wp-content/uploads/2021/02/Web-Under-Construction-03.jpg" alt="under construction" style={{ marginTop: -10 }}/>
+        <img src="https://i.imgur.com/UZI5lP8.png" className="img-fluid" alt="under construction" style={{ marginTop: -10 }}/>
     </>
   )
 }

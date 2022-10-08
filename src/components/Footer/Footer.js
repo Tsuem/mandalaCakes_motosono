@@ -18,7 +18,7 @@ const Footer = () => {
                 </ul>
                 <ul className='col-12 col-md-4 list-unstyled mb-1'>
                     <li className='font-weight-bold my-3 fs-5'>Social Media</li>
-                    <li className='d-flex justify-content-evenly'>
+                    <li className='d-flex justify-content-evenly mb-2'>
                         <a href='https://www.facebook.com/mandalacakesok/' target='_blank'><h4><i className="bi bi-facebook btn-outline-light"/></h4></a>
                         <a href='https://www.instagram.com/mandalacakes/' target='_blank'><h4><i className="bi bi-instagram btn-outline-light"/></h4></a>
                         <a href='https://api.whatsapp.com/send/?phone=5493517657602&text&type=phone_number&app_absent=0' target='_blank'><h4><i className="bi bi-whatsapp btn-outline-light"/></h4></a>
