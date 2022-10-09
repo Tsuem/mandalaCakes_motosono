@@ -9,10 +9,10 @@ const CartWidget = () => {
 
     return (
         <div>
-            <Link to={'/cart'} className="btn btn-secondary border p-3 me-4 g-col-2">
+            <Link to={'/cart'} className="btn btn-secondary border p-2 g-col-2">
                 <div className="d-flex align-items-center">
                     {qty !== 0 && <h2 className="me-2 mt-2 text-white">{qty}</h2>}
-                    <Cart3 size={50} />
+                    <Cart3 size={40} />
                 </div>
             </Link>
         </div>

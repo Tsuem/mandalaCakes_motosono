@@ -1,41 +1,35 @@
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link, NavLink } from 'react-router-dom';
 import logo from "../../../logomandala.jpg";
 import CartWidget from "../CartWidget/CartWidget";
-import { Link, NavLink } from 'react-router-dom';
-import { NavDropdown } from "react-bootstrap";
 
 const NavBar = () => {
-
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container-fluid">
-        <Link to={'/'} className="navbar-brand">
-          <img src={logo} className="d-inline-block align-text-top ms-4 me-1" width="85px" alt="mandala-logo" />
+    <Navbar bg="secondary" variant="light" expand="lg">
+      <Container>
+        <Link to={'/'}>
+          <img src={logo} width="85px" alt="mandala-logo" />
         </Link>
-        <button className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="navbar-collapse collapse" id="navbarColor02">
-          <ul className="navbar-nav me-auto">
-            <li className="nav-item">
-              <NavLink to={'/'} style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} className="nav-link">Home</NavLink>
-            </li>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <NavLink to={'/'} style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} className="nav-link">Home</NavLink>
             <NavDropdown id="nav-dropdown-dark-example" title="Category" variant="secondary">
               <NavDropdown.Item as={Link} to={'category/Classic'}>Classic</NavDropdown.Item>
               <NavDropdown.Item as={Link} to={'category/Premium'}>Premium</NavDropdown.Item>
               <NavDropdown.Item as={Link} to={'category/Vegan'}>Vegan</NavDropdown.Item>
             </NavDropdown>
-            <li className="nav-item">
-              <NavLink to={'/about'} style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} className="nav-link">About Us</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={'/contact'} style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} className="nav-link">Contact</NavLink>
-            </li>
-          </ul>
+            <NavLink to={'/about'} style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} className="nav-link">About Us</NavLink>
+            <NavLink to={'/contact'} style={({ isActive }) => isActive ? { fontWeight: 'bold' } : {}} className="nav-link">Contact</NavLink>
+          </Nav>
           <CartWidget />
-        </div>
-      </div>
-    </nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
-};
+}
 
 export default NavBar;
