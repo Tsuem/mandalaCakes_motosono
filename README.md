@@ -4,6 +4,9 @@ In this project was included bootswatch and react-bootstrap as extra dependencie
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## GIF
+![mandalacakes](https://user-images.githubusercontent.com/99552910/196079469-0f4d5f66-9f0f-4bed-89a9-e0f491f45f4d.gif)
+
 ## Available Scripts
 
 ### `npm start`
