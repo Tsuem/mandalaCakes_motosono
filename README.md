@@ -4,6 +4,14 @@ In this project it was included bootswatch, react-bootstrap, react-bootstrap-ico
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Construido con 🛠️
+
+* [Bootswatch - Minty](https://bootswatch.com/minty/)
+* [React Bootstrap](https://react-bootstrap.github.io/) - Framework Rebuilt for React
+* [React Bootstrap Icons](https://www.npmjs.com/package/react-bootstrap-icons) - Bootstrap Icons Library
+* [React Hot Toast](https://react-hot-toast.com/) - Notifications/Alerts
+* [Sweeralert2 React Content](https://www.npmjs.com/package/sweetalert2-react-content) - Alerts/Confirmation dialogs
+
 ## GIF
 ![mandalacakes](https://user-images.githubusercontent.com/99552910/196079469-0f4d5f66-9f0f-4bed-89a9-e0f491f45f4d.gif)
 
