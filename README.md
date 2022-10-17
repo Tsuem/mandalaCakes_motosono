@@ -31,4 +31,4 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-You can see about CoderHouse on the CoderHouse.
+You can see about CoderHouse on the [CoderHouse](https://www.coderhouse.com/?utm_term=coderhouse&utm_campaign=0&utm_source=google_search_brand&utm_medium=cpc&gclid=Cj0KCQjw166aBhDEARIsAMEyZh7GAa8BcNLnjzuhh0GIuHKdiC8M604CAQfzZlSMFK1wLh6ZhljMABMaAk_5EALw_wcB).
