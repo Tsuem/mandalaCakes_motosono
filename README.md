@@ -1,6 +1,6 @@
 # Mandala Cakes 
-An e-commerce created for React course at Coderhouse. I tried to do an e-commerce to a cake shop in Córdoba with a pink girly style.  
-In this project was included bootswatch and react-bootstrap as extra dependencies by npm.
+An e-commerce created for React course at Coderhouse. I tried to do an e-commerce to a cake shop in Cordoba, Argentina with a pink girly style.  
+In this project it was included bootswatch, react-bootstrap, react-bootstrap-icons, react-hot-toast & sweetalert2-react-content as extra dependencies by npm. It was also used Firestore Database as the database of the project.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
